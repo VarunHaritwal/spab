@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block head_title %}
+Welcome | {{ block.super }}
+{% endblock %}
+
+<style>
+{% block style %}
+
+
+{% endblock %}
+</style>
+
+{% block jumbotron_content %}
+
+<main role="main" class="container-fluid">
+
+  <div class="jumbotron">
+  	<div class="container">
+  	<div class="row">
+	<div class="col-sm-7.5">
+    <h1>Shree Pitambra Ayurved Bhavan</h1>
+    <p class="lead">We are the manufacturers of all ayurvedic medicines and other essential items.</p>
+    <a class="btn btn-lg btn-primary" href="" role="button">Join Us &raquo;</a>
+    </div>
+    <div class='col-sm-4'>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HzTvEK1sVi0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+	</div>
+	</div>
+    </div>
+</main>
+{% endblock %}
+
+<!-- 
+{% block jumbotron %}
+{{ block.super }}
+Hello
+{% endblock %}
+ -->
+
+{% block content %}
+
+
+{{ queryset }}
+<div class="row">
+	<div class='col-md-3'>
+		<p class='lead text_align_center'>All Genuine products made with excellence</p>
+	</div>
+
+	<div class='col-md-3'>
+		<p class='lead text_align_center'>Som Vita</p>
+	</div>
+	<div class='col-md-3'>
+		<p class='lead text_align_center'>Som Pradhar</p>
+	</div>
+	
+	<div class="col-xs-3 pull-right">
+	
+			<p class='lead text_align_center'>{{ title }}</p>
+			<form method='POST' class="uniForm" action=''>
+				{% csrf_token %}
+				{{ form|crispy }}
+			<input class="btn btn-lg btn-primary" type='submit' value='SignUp'>
+		</input>
+
+		</form>
+		</div>
+
+</div>
+{% endblock %}
